@@ -24,6 +24,6 @@
     "nodemon": "^2.0.12"
   },
   "engines": {
-    "node": "12.x" // this should be the same version as your local
+    "node": "14.x"
   }
 }
