@@ -1,15 +1,24 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import { updateUsername } from "../redux/actions";
 
-const UsernameForm = () => {
+const UsernameForm = ({ updateUsername, username }) => {
 
-    const [username, setUsername] = useState('Paul');
+  const handleChange = e => {
+    const username = e.target.value;
+    updateUsername(username);
+  };
 
-    const handleChange = e => {
-        setUsername(e.target.value);
-    };
-
-    return <input onChange={handleChange} value={username} />;
+  return <input onChange={handleChange} value={username} />;
 
 };
 
-export default UsernameForm;
+const mapStateToProps = state => ({
+    username: state.username
+});
+
+const mapDispatchToProps = dispatch => ({
+    updateUsername: username => dispatch(updateUsername(username))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsernameForm);

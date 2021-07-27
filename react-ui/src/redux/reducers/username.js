@@ -1,9 +1,10 @@
 import { GET_USERNAME } from '../actionTypes';
 
-const initialState = {
-    username: ''
-};
+const initialState = '';
 
 export default function(state=initialState, action) {
-    return state;
+  if (action.type == GET_USERNAME) {
+    return action.payload.username;
+  }
+  return state;
 };
