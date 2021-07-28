@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import '../../components/greeting'
-import Greeting from "../../components/greeting";
 
 const Header = () => {
   return (
-    <header>
-      <div><NavLink to="/">Home</NavLink></div>
+    <header className="App-header">
       <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
         <li>
           <NavLink to="/ntrack">NTRACK</NavLink>
         </li>
@@ -29,7 +29,6 @@ const Header = () => {
           <NavLink to="/contact">Contact Us</NavLink>
         </li>
       </ul>
-      <Greeting />
     </header>
   );
 };
