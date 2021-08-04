@@ -1,1 +1,5 @@
 export const GET_USERNAME = 'GET_USERNAME';
+export const GET_TASKNAME = 'GET_TASKNAME';
+export const GET_TASKDESC = 'GET_TASKDESC';
+export const GET_STOPWATCH = 'GET_STOPWATCH';
+export const MANAGE_TASKS = 'MANAGE_TASKS';

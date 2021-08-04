@@ -1,5 +1,5 @@
-import Greeting from "../../components/greeting";
-import UsernameForm from "../../components/usernameForm";
+import Greeting from "../../components/usernameForm/greeting";
+import UsernameForm from "../../components/usernameForm/usernameForm";
 
 const Home = () => {
     return (

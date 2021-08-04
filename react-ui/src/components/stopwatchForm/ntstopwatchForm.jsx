@@ -13,7 +13,6 @@ function MyStopwatch() {
     reset,
   } = useStopwatch({ autoStart: true });
 
-
   return (
     <div style={{textAlign: 'center'}}>
       <h1>react-timer-hook</h1>

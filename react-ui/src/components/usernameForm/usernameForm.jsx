@@ -1,6 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { connect } from "react-redux";
-import { updateUsername } from "../redux/actions";
+import { updateUsername } from "../../redux/actions";
 
 const UsernameForm = ({ updateUsername, username }) => {
 
