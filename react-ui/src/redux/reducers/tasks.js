@@ -4,7 +4,9 @@ const initialState = [];
 
 function tasks (state=initialState, action) {
   if (action.type === MANAGE_TASKS) {
-    return action.payload.taskname;
+    const copy = state.slice()
+    copy.push(action.payload.task)
+    return copy;
   }
   return state;
 };
