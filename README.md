@@ -3,22 +3,23 @@
 
 nTime application helps developers measure their improvements for themselves.
 
-<div align="left">
-  <img style="margin: 10px" src="assets/ntimer-w3" alt="NTIME" height="45" />
+<div>
+  <img style="margin: 10px" src="./assets/ntimer-w3.jpg" alt="NTIME" height="45" />
 </div>
 
 ## Coding Challenge:
-- API application with web front end - Server should serve a website that users can interact with (user actions should trigger CRUD operations)
-- PostgreSQL database
-- Sequelize for ORM
-- Application hosted on Heroku, Glitch + ElephantSQL (easy mode) or Amazon AWS (hard mode)
-- Application meets a business or social need
-- Must have PassportJS Local Strategy for authentication OR Incorporate ONE the following into your backend:
-    1. Twitter
-    2. Facebook
-    3. Google
-    4. GitHub
-    5. or any other OAuth Provider
+- Use React.js and Redux in order to manage the state of a frontend application.
+    - using `react-redux` is highly recommended, but not a hard requirement
+- Application must contain at least 6 React components.
+- Organize components into separate files and `import` / `export` using es6 modules
+    - In general it should be "one component per file"
+    - There can be exceptions to this; use your best judgment on code organization
+- You must have at least 5 separate Redux action types.
+- At least one component must use local `state` and not participate in the Redux state management
+    - Tip: pick a small component with some trivial, ephemeral state for this
+    - When in doubt, store things in your Redux store
+- At least one component must use a [lifecycle method](https://reactjs.org/docs/react-component.html#componentdidmount) or the [Effect](https://reactjs.org/docs/hooks-effect.html) hook.
+- This is a *solo** project - just you (with the support of the teaching staff).
 
 ## Tools:
 <div align="left">

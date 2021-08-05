@@ -14,14 +14,35 @@ export function NTstopWatch() {
       reset,
     } = useStopwatch({ autoStart: false });
 
+    const handleStartClick = ()=> {
+      console.log('Start clicked');
+      // Start your stopwatch library start here.
+      start();
+      console.log(isRunning);
+  };
+
+  const handleStopClick = ()=> {
+      console.log('Stop clicked');
+      // Start your stopwatch library stop here.
+    pause();
+    console.log(isRunning);
+  };
+  
+  const handleResetClick = ()=> {
+    console.log('Reset clicked');
+    // Start your stopwatch library stop here.
+    reset();
+  };
+
     return (
         <div>
           <td>
-          {/* <Button variant="dark" onClick={start}>Start</Button>{' '} */}
-          <Button variant="dark" onClick={start}>Start</Button>
-          <Button variant="dark" onClick={pause}>Pause</Button>{' '}
-          <Button variant="dark" onClick={reset}>Reset</Button>{' '}</td>
-          <td><span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span><span> ---- {isRunning ? 'Running' : 'Not running'}</span></td>  
+              {isRunning ? <Button variant="dark" onClick={handleStopClick}>Stop</Button>: 
+              <Button variant="dark" onClick={handleStartClick}>Start</Button>}{' '}
+              <Button variant="dark" onClick={handleResetClick}>Reset</Button>{' '}
+          </td>
+          <td><span>{days}</span>:<span>{hours}</span>:<span>{minutes}</span>:<span>{seconds}</span></td>
+          <td>{isRunning ? 'Running' : 'Not running'}</td>
         </div>
         );
     };
