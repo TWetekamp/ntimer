@@ -3,18 +3,21 @@ import { Table, Button } from "react-bootstrap";
 
 const Tasksum = ( { tasks } ) => {
 
-    // const taskSummary = [];
-    // const map = new Map();
-    // for (const item of tasks) {
-    //     if(!map.has(item.task)){
-    //         map.set(item.task, true);    // set any value to Map
-    //         taskSummary.push({
-    //             id: item.id,
-    //             task: item.task
-    //         });
-    //     }
-    // }
-    // console.log(taskSummary)
+    const taskSummary = [];
+    const map = new Map();
+    for (const item of tasks) {
+        if(!map.has(item.task)){
+            map.set(item.task, true);    // set any value to Map
+            taskSummary.push({
+                id: item.id,
+                task: item.task,
+                description: item.description,
+                category: item.category,
+                size: item.size                
+            });
+        }
+    }
+    console.log(taskSummary)
 
 return (
     <div>
@@ -37,7 +40,7 @@ return (
             </tr>
             </thead>
             <tbody>
-             {tasks.map((task,index) => {
+             {taskSummary.map((taskSummary,index) => {
                 return (
                 <tr key={index}>
                     <Button variant="dark">Close</Button>{' '}
@@ -45,14 +48,14 @@ return (
                     <td>8-5-2021</td>
                     <td>2:31:08</td>
                     <td>Active</td>
-                    <td>{task.task}</td>
-                    <td>{task.description}</td>
-                    <td>{task.category}</td>
-                    <td>{task.size}</td>
+                    <td>{taskSummary.task}</td>
+                    <td>{taskSummary.description}</td>
+                    <td>{taskSummary.category}</td>
+                    <td>{taskSummary.size}</td>
                 </tr>
                     )
                 })} 
-            <tr>
+            {/* <tr>
             <Button variant="dark">Close</Button>{' '}
                 <td>8-1-2021</td>
                 <td>8-2-2021</td>
@@ -84,7 +87,7 @@ return (
                 <td>Update Home Page - Security</td>
                 <td>Refactor</td>
                 <td>13 Story Points</td>
-            </tr>
+            </tr> */}
             </tbody>
         </Table>
         <p></p>
