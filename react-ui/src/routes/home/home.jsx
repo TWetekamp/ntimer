@@ -13,8 +13,8 @@ const Home = () => {
               </div> */}
             </div>
           </div>
-          <Greeting />
-          <UsernameForm />
+          {/* <Greeting />
+          <UsernameForm /> */}
           <div className="front-arts">
             <h1>Helpful Articles for Better Software</h1>
             <ul>

@@ -1,6 +1,9 @@
 const Credits = () => {
     return (
-        <p>Credits</p>
+        <div>
+            <p>Credits</p>
+            <p>Application developed by Ted Wetekamp</p>
+        </div>
     )
 };
 
