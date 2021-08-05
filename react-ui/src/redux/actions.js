@@ -37,10 +37,11 @@ export const addTask = task => {
   return {
     type: MANAGE_TASKS,
     payload: {
-      category: task.category,
+      task: task.task,
       description: task.description,
+      category: task.category,
       notes: task.notes,
-      task: task.task
+      size: task.size
     }
   }
 };

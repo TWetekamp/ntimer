@@ -19,12 +19,12 @@ const Header = () => {
         <li>
           <NavLink to="/tasksum">TaskSum</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/insights">Insights</NavLink>
         </li>
         <li>
           <NavLink to="/login">Login</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/contact">Contact Us</NavLink>
         </li>

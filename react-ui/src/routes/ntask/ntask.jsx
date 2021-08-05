@@ -7,10 +7,11 @@ import { addTask } from "../../redux/actions";
 const Ntask = ({ addTask, username }) => {
 
   const [task, setTask] = useState({
-    category: '',
+    task: '',
     description: '',
     notes: '',
-    task: ''
+    category: '',
+    size: ''
   });
 
   const handleChange = e => {
@@ -20,7 +21,6 @@ const Ntask = ({ addTask, username }) => {
       ...task,
       [key]: value
     });
-    console.log(copy);
     setTask(copy);
   }
 
@@ -28,10 +28,11 @@ const Ntask = ({ addTask, username }) => {
     e.preventDefault()
     addTask(task);
     setTask({
-      category: '',
+      task: '',
       description: '',
       notes: '',
-      task: ''
+      category: '',
+      size: ''
     })
   };
 
@@ -48,6 +49,7 @@ const Ntask = ({ addTask, username }) => {
                     <th>Task Description</th>
                     <th>Task Notes</th>
                     <th>Task Category</th>
+                    <th>Task Size</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,6 +58,7 @@ const Ntask = ({ addTask, username }) => {
                 <td><input name="description" onChange={handleChange} value={task.description} /></td>
                 <td><input name="notes" onChange={handleChange} value={task.notes} /></td>
                 <td><input name="category" onChange={handleChange} value={task.category} /></td>
+                <td><input name="size" onChange={handleChange} value={task.size} /></td>
                 </tr>
               </tbody>
             </Table>

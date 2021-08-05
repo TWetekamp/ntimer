@@ -2,8 +2,8 @@ import { Route, Switch } from "react-router-dom";
 import Contact from "./contact/contact";
 import Credits from "./credits/credits";
 import Home from "./home/home";
-import Insights from "./insights/insights";
-import Login from "./login/login";
+// import Insights from "./insights/insights";
+// import Login from "./login/login";
 import Ntask from "./ntask/ntask";
 import Ntrack from "./ntrack/ntrack";
 import Tasklist from "./tasklist/tasklist";
@@ -40,7 +40,7 @@ const Routes = () => {
             path="/tasksum"
             render={() => <Tasksum />}
           />
-          <Route 
+          {/* <Route 
             exact={true}
             path="/insights"
             render={() => <Insights />}
@@ -49,7 +49,7 @@ const Routes = () => {
             exact={true}
             path="/login"
             render={() => <Login />}
-          />
+          /> */}
           <Route 
             exact={true}
             path="/contact"

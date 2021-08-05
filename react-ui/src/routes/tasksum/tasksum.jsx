@@ -1,6 +1,21 @@
+import { connect } from 'react-redux';
 import { Table, Button } from "react-bootstrap";
 
-const Tasksum = () => {
+const Tasksum = ( { tasks } ) => {
+
+    // const taskSummary = [];
+    // const map = new Map();
+    // for (const item of tasks) {
+    //     if(!map.has(item.task)){
+    //         map.set(item.task, true);    // set any value to Map
+    //         taskSummary.push({
+    //             id: item.id,
+    //             task: item.task
+    //         });
+    //     }
+    // }
+    // console.log(taskSummary)
+
 return (
     <div>
     <div className="y-wrap">
@@ -22,6 +37,21 @@ return (
             </tr>
             </thead>
             <tbody>
+             {tasks.map((task,index) => {
+                return (
+                <tr key={index}>
+                    <Button variant="dark">Close</Button>{' '}
+                    <td>8-1-2021</td>
+                    <td>8-5-2021</td>
+                    <td>2:31:08</td>
+                    <td>Active</td>
+                    <td>{task.task}</td>
+                    <td>{task.description}</td>
+                    <td>{task.category}</td>
+                    <td>{task.size}</td>
+                </tr>
+                    )
+                })} 
             <tr>
             <Button variant="dark">Close</Button>{' '}
                 <td>8-1-2021</td>
@@ -64,4 +94,8 @@ return (
   );
 };
 
-export default Tasksum;
+const mapStateToProps = state => ({
+    tasks: state.tasks
+  });
+
+export default connect(mapStateToProps) (Tasksum);
