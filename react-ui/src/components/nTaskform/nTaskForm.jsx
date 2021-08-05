@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { connect } from "react-redux";
-import { updateTaskname } from "../redux/actions";
+import { updateTaskname } from "../../redux/actions";
 
 const TasknameForm = ({ updateTaskname, taskname }) => {
 

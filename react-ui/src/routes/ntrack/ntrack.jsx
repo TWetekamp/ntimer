@@ -1,9 +1,13 @@
-import { Table, Form } from "react-bootstrap";
+import { connect } from 'react-redux';
+import { Table } from "react-bootstrap";
 import { NTstopWatch } from '../../components/stopwatch/ntstopWatch';
-// import { ntaskRed } from '../../redux/reducers/ntaskRed';
-// import { nTaskDisplay } from '../../components/taskform/nTaskDisplay';
 
-const Ntrack = () => {
+const Ntrack = ({ tasks }) => {
+  
+  // const theTasks = tasks.map((task, index) => {
+  //   return <li key={index}>{task.task}</li>;
+  // })
+
     return (
       <div>
         <div className="y-wrap">
@@ -21,36 +25,32 @@ const Ntrack = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                    <NTstopWatch />
-                    {/* <td>New U/I Purchase</td> */}
-                    <td><nTaskDisplay /></td>
-                    <td>New U/I purchase new products</td>
-                    <Form.Control type="text" placeholder="Enter notes as needed." />
-                    <td>Enhancement</td>
+                {tasks.map((task,index ) => {
+                  return (
+                    <tr key={index}>
+                      <NTstopWatch />
+                      <td>{task.task}</td>
+                      <td>{task.description}</td>
+                      <td>{task.notes}</td>
+                      <td>{task.category}</td>
                 </tr>
-                <tr>
-                    <NTstopWatch />
-                    <td>Fix CSS Issue</td>
-                    <td>Items overlapping on new user p</td>
-                    <Form.Control placeholder="Analyzing  CSS changes" />
-                    <td>Break-Fix</td>
-                </tr>
-                <tr>
-                    <NTstopWatch />
-                    <td>Modify Home Page</td>
-                    <td>Update Home Page - Security</td>
-                    <Form.Control placeholder="Review vulnerabilities" />
-                    <td>Refactor</td>
-                </tr>
+                  )
+                })}
               </tbody>
             </Table>
-            {/* <p></p>
-            <Button variant="dark">Capture and Save Stopwatches</Button>{' '} */}
           </form>
+          <div>
+            {/* <ul>
+              {theTasks}
+            </ul> */}
+          </div>
         </div>
       </div>
     )
 };
 
-export default Ntrack;
+const mapStateToProps = state => ({
+  tasks: state.tasks
+});
+
+export default connect(mapStateToProps)(Ntrack);

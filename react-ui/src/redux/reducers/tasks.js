@@ -4,7 +4,10 @@ const initialState = [];
 
 function tasks (state=initialState, action) {
   if (action.type === MANAGE_TASKS) {
-    return action.payload.taskname;
+    console.log("reducer",action.payload)
+    const newTask = state.slice();
+    newTask.push(action.payload);
+    return newTask;
   }
   return state;
 };

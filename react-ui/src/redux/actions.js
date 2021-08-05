@@ -33,10 +33,14 @@ export const updateTaskdesc = taskdesc => {
 };
 
 export const addTask = task => {
+  console.log("action",task)
   return {
     type: MANAGE_TASKS,
     payload: {
-      task
+      category: task.category,
+      description: task.description,
+      notes: task.notes,
+      task: task.task
     }
   }
 };
